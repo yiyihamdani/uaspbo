@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br><br>
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="{% static 'latar.png' %}" alt="Architecture" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>DB</b></span> <span class="w3-hide-small w3-text-white" >DATA BENCANA</span></h1>
+  </div>
+</header><br><br>
+<div class="w3-aqua" id="tour">
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+    <h2 class="w3-wide w3-center">DATA BENCANA TSUNAMI</h2>
+   </div></div>
+    <!-- Image header -->
+    <br>
+    <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Waktu Kejadian</th>
+          <th scope="col">Lokasi</th>
+          <th scope="col">Mag. Gempa</th>
+          <th scope="col">Koordinat</th>
+          <th scope="col">Tinggi Gelombang</th>
+          <th scope="col">Korban Jiwa</th>
+          <th scope="col">Dokumentasi</th>
+          <th scope="col">Lainnya</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for Jurnal in Jurnals %}
+        <tr>
+          <td>{{Jurnal.judul}}</td>
+          <td>{{Jurnal.penulis}}</td>
+          <td>{{Jurnal.penerbit}}</td>
+          <td>{{Jurnal.kampus}}</td>
+          <td>{{Jurnal.kelompok_ikan}}</td>
+          <td>{{Jurnal.nama_latin}}</td>
+          <td> <img width="100px" src="{% static Jurnal.img %}" alt=""> </td>
+          <td><a class="btn btn-outline-secondary" href="{{ Jurnal.pk }}" role="button">Detail</a>
+          <a href="{% url 'updatejurnal' Jurnal.id %}" class="btn btn-outline-primary">Edit</a>
+          <a href="#" class="btn btn-outline-danger" onclick="deletejurnal('{{Jurnal.id}}' ,'{{Jurnal.judul}}')">Hapus</a>
+        </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <script>
+      function deletejurnal(id_Jurnal, judul){
+      swal({
+    title: "Apakah Anda Yakin?",
+    text: "Setelah film " + judul + " dihapus, data tidak dapat dikembalikan!",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  })
+  .then((willDelete) => {
+    if (willDelete) {
+      swal("Berhasil!", "Data Film " + judul + "Berhasil Dihapus!", "success").then(function(){
+      window.location = "/halamanjurnal/deletejurnal/" + id_Jurnal;
+    });
+  }
+  });
+  }
+    </script></div><br><br>
+{% endblock %}

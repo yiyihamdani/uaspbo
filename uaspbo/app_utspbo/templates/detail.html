@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br><br><br><br><br>
+<div class="container">
+  <div class="card mb-3" style="max-width: 1500px;">
+    <div class="row g-0">
+      <div class="col-md-3" style="margin-top: 50px; margin-left: 30px;">
+        <img src="{% static Jurnal.img %}" class="img-fluid rounded-start" alt="..." width="270px">
+      </div>
+      <div class="col-md-6"  style="margin-left: -40px; margin-left: 20px;">
+        <div class="card-body" style="margin-top: 10px;">
+          <h2 class="card-title" style="margin-left: -10px;">{{Jurnal.judul}}</h2>
+          <p class="card-text" style="font-size: 17px;"> Waktu Kejadian : {{Jurnal.penulis}}</p>
+          <p class="card-text" style="font-size: 17px;"> Mag. Gempa : {{Jurnal.penerbit}}</p>
+          <p class="card-text" style="font-size: 17px;"> Koordinat : {{Jurnal.kampus}}</p>
+          <p class="card-text" style="font-size: 17px;"> Tinggi Gelombang : {{Jurnal.nama_ikan}}</p>
+          <p class="card-text" style="font-size: 17px;"> Korban Jiwa : {{Jurnal.nama_latin}}</p>
+          <h5 class="card-title">Keterangan</h5>
+          <p  style="text-align: justify; font-size: 15px;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus vero aspernatur nihil repellendus corporis. Cumque nobis excepturi exercitationem earum eligendi? Sint et omnis corporis dicta dolores repudiandae incidunt nam voluptatum.</p>
+        </div>
+      </div>
+    </div>
+  </div></div><br><br>
+  {% endblock %}
+
+ 

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br><b></b>
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+    <img class="w3-image" src="{% static 'latar.png' %}" alt="Architecture" width="1500" height="800">
+    <div class="w3-display-left w3-text-white" style="padding:48px">
+      <span class="w3-jumbo w3-hide-small w3-text-white"> <b>DATA</b> BENCANA</span><br>
+      <p><a href="/halamanjurnal" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Selengkapnya</a></p>
+    </div>
+  </header><br><br>
+  
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="{% static 'latar.jpg' %}" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">TENTANG KAMI</h1><br>
+      <p class="w3-large w3-text-black w3-hide-medium"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quis reprehenderit consectetur. Voluptas delectus consequatur, autem non ab dolorum quidem alias. Voluptate quia voluptatibus quo quasi praesentium quod enim ducimus.</p>
+      <p class="w3-large w3-text-black w3-hide-medium"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil dolore, aspernatur laudantium distinctio ad reprehenderit natus libero consectetur, architecto maiores nulla perspiciatis ducimus. Nemo voluptas praesentium nostrum deserunt animi.</p>
+    </div>
+  </div>
+  
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+    <h2 class="w3-wide w3-center">KONTAK</h2>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-col m12">
+        <form action="/action_page.php" target="_blank">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Nama" required name="Name">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          <input class="w3-input w3-border" type="text" placeholder="Pesan" required name="Message">
+          <button class="w3-button w3-black w3-section w3-right" type="submit">KIRIM</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+<!-- End Page Content -->
+</div>
+
+{% endblock %}
